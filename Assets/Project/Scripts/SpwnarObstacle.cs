@@ -9,8 +9,13 @@ public class SpwnarObstacle : MonoBehaviour
     public float timeToInstantite = 0.5f;
     public Transform position;
 
-
     public bool ActiveCorrotine = true;
+
+
+    private void Update()
+    {
+         
+    }
     private void Rand()
     {
 
@@ -18,7 +23,7 @@ public class SpwnarObstacle : MonoBehaviour
 
         Vector3 randomPos = new Vector3(randomX, transform.position.y, transform.position.z);
 
-       Instantiate(Obstacles[Random.Range(0, Obstacles.Length)], randomPos, transform.rotation);
+        Instantiate(Obstacles[Random.Range(0, Obstacles.Length)], randomPos, transform.rotation);
         
       
     }

@@ -19,6 +19,10 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
+
+        GuardarPontos();
+
+
         if (Input.GetMouseButtonDown(0))
         {
             speed = Random.Range(2f, 6f);
@@ -76,6 +80,7 @@ public class BallController : MonoBehaviour
                 {
                     Spwan.ActiveCorrotine = false;
                     Destroy(gameObject);
+                    gameManager.Painel();
                 }
 
                 break;
@@ -84,5 +89,10 @@ public class BallController : MonoBehaviour
                 Destroy(collision.gameObject);
                 break;
         }
+    }
+
+    private void GuardarPontos()
+    {
+        PlayerPrefs.SetInt("pontos", ponts);
     }
 }
